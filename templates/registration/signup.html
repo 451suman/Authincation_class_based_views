@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- <form action="">
+    {% csrf_token %}
+    {{form.as_p}}
+</form> -->
+
+<!-- <form method="post" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="first_name" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="first_name" name="first_name" required>
+    </div>
+    <div class="mb-3">
+        <label for="last_name" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="last_name" name="last_name" required>
+    </div>
+    <div class="mb-3">
+        <label for="password1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password1" name="password1" required>
+    </div>
+    <div class="mb-3">
+        <label for="password2" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="password2" name="password2" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+<div class="mt-3">
+    <a href="#">Already have an account? Log in here.</a>
+</div> -->
+
+
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+                <h2 class="heading-section">Signup</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="login-wrap p-0">
+                    <form action="" class="signin-form" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" placeholder="username" required>
+                            {{ form.username.errors}}
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="email" placeholder="email" required>
+                            {{ form.username.errors}}
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password1" placeholder="password" required>
+                            {{ form.password1.errors}}
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password2" placeholder="conform password" required>
+                            {{ form.password2.errors}}
+                        </div>
+                                             
+                        <div class="form-group">
+                            <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+                        </div>
+                      
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

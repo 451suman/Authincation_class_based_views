@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> this is home page</h1>
+<div class="text-body">
+
+<!-- Check if the user is authenticated -->
+{% if user.is_authenticated %}
+<p>Hello, {{ user.username }}!</p>
+
+<!-- Display user active status -->
+{% if not user.is_active %}
+    <p>Your account is inactive. Please contact support for assistance.</p>
+
+<!-- Check for superuser status -->
+{% elif user.is_superuser %}
+    <p>You are a superuser and have all permissions.</p>
+
+<!-- Check for staff status -->
+{% elif user.is_staff %}
+    <p>You have staff privileges and can access the admin site.</p>
+
+<!-- Regular user -->
+{% else %}
+    <p>You are a regular user with standard permissions.</p>
+{% endif %}
+
+<!-- If the user is not authenticated -->
+{% else %}
+<p>You are not logged in. Please <a href="{% url 'login' %}">log in</a> to see your permissions.</p>
+{% endif %}
+</div>
+
+
+{% endblock %}
